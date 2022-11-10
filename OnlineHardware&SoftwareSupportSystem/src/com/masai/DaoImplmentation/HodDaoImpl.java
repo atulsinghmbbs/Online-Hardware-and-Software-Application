@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.masai.Dao.HodDao;
-import com.masai.Exception.HODException;
-import com.masai.Model.HOD;
 import com.masai.Utility.DBUtil;
 
 public class HodDaoImpl implements HodDao{
@@ -21,7 +19,7 @@ public class HodDaoImpl implements HodDao{
 		try (Connection conn= DBUtil.provideConnection()){
 			
 			
-			PreparedStatement ps= conn.prepareStatement("select email from HOD where email=? AND password = ?");
+			PreparedStatement ps= conn.prepareStatement("select * from HOD where email=? AND password = ?");
 			
 			
 			ps.setString(1, email);

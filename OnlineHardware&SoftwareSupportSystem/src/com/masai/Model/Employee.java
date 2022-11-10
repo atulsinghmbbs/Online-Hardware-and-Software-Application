@@ -3,8 +3,8 @@ package com.masai.Model;
 public class Employee {
 
 	
-	String FirsName;
-	String LastName;
+	int empid;
+	String empname;
 	String email;
 	String password;
 	
@@ -15,34 +15,40 @@ public class Employee {
 		
 	}
 
-   
-	public Employee(String firsName, String lastName, String email, String password) {
+
+
+	public Employee(int empid, String empname, String email, String password) {
 		super();
-		FirsName = firsName;
-		LastName = lastName;
+		this.empid = empid;
+		this.empname = empname;
 		this.email = email;
 		this.password = password;
 	}
 
 
-	public String getFirsName() {
-		return FirsName;
+
+	public int getEmpid() {
+		return empid;
 	}
 
 
-	public void setFirsName(String firsName) {
-		FirsName = firsName;
+
+	public void setEmpid(int empid) {
+		this.empid = empid;
 	}
 
 
-	public String getLastName() {
-		return LastName;
+
+	public String getEmpname() {
+		return empname;
 	}
 
 
-	public void setLastName(String lastName) {
-		LastName = lastName;
+
+	public void setEmpname(String empname) {
+		this.empname = empname;
 	}
+
 
 
 	public String getEmail() {
@@ -50,9 +56,11 @@ public class Employee {
 	}
 
 
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 
 
 	public String getPassword() {
@@ -60,16 +68,20 @@ public class Employee {
 	}
 
 
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
 
+
 	@Override
 	public String toString() {
-		return "Engineer [FirsName=" + FirsName + ", LastName=" + LastName + ", email=" + email + ", password="
-				+ password + "]";
+		return "Employee [empid=" + empid + ", empname=" + empname + ", email=" + email + ", password=" + password
+				+ "]";
 	}
+
+   
 	
 	
 	
