@@ -5,16 +5,25 @@ public class Complain {
 	int complainid;
 	String complainname;
 	String complainengineer;
-	String solved;
+	String complainstatus;
 	
 	
-	public Complain(int complainid, String complainname, String complainengineer, String solved) {
+	
+	public Complain() {
+		super();
+		
+	}
+
+
+
+	public Complain(int complainid, String complainname, String complainengineer, String complainstatus) {
 		super();
 		this.complainid = complainid;
 		this.complainname = complainname;
 		this.complainengineer = complainengineer;
-		this.solved = solved;
+		this.complainstatus = complainstatus;
 	}
+
 
 
 	public int getComplainid() {
@@ -22,9 +31,11 @@ public class Complain {
 	}
 
 
+
 	public void setComplainid(int complainid) {
 		this.complainid = complainid;
 	}
+
 
 
 	public String getComplainname() {
@@ -32,9 +43,11 @@ public class Complain {
 	}
 
 
+
 	public void setComplainname(String complainname) {
 		this.complainname = complainname;
 	}
+
 
 
 	public String getComplainengineer() {
@@ -42,28 +55,33 @@ public class Complain {
 	}
 
 
+
 	public void setComplainengineer(String complainengineer) {
 		this.complainengineer = complainengineer;
 	}
 
 
-	public String getSolved() {
-		return solved;
+
+	public String getComplainstatus() {
+		return complainstatus;
 	}
 
 
-	public void setSolved(String solved) {
-		this.solved = solved;
+
+	public void setComplainstatus(String complainstatus) {
+		this.complainstatus = complainstatus;
 	}
+
 
 
 	@Override
 	public String toString() {
 		return "Complain [complainid=" + complainid + ", complainname=" + complainname + ", complainengineer="
-				+ complainengineer + ", solved=" + solved + "]";
+				+ complainengineer + ", complainstatus=" + complainstatus + "]";
 	}
-
-
+	
+	
+	
 
 	
 }

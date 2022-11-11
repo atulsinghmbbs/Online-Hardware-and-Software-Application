@@ -13,7 +13,7 @@ public class LoginEmployee {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter Student email/username :");
+		System.out.println("Enter Employee email/username :");
 		String email= sc.next();
 		
 		System.out.println("Enter Password :");
