@@ -6,7 +6,7 @@ public class Engineer {
 	String EngineerName;
 	String email;
 	String password;
-	
+	String category;
 	
 	
 	
@@ -17,15 +17,14 @@ public class Engineer {
 
 
 
-
-	public Engineer(int engid, String engineerName, String email, String password) {
+	public Engineer(int engid, String engineerName, String email, String password, String category) {
 		super();
 		this.engid = engid;
 		EngineerName = engineerName;
 		this.email = email;
 		this.password = password;
+		this.category = category;
 	}
-
 
 
 
@@ -35,11 +34,9 @@ public class Engineer {
 
 
 
-
 	public void setEngid(int engid) {
 		this.engid = engid;
 	}
-
 
 
 
@@ -49,11 +46,9 @@ public class Engineer {
 
 
 
-
 	public void setEngineerName(String engineerName) {
 		EngineerName = engineerName;
 	}
-
 
 
 
@@ -63,11 +58,9 @@ public class Engineer {
 
 
 
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 
 
 
@@ -77,19 +70,32 @@ public class Engineer {
 
 
 
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
 
 
+	public String getCategory() {
+		return category;
+	}
+
+
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+
 
 	@Override
 	public String toString() {
 		return "Engineer [engid=" + engid + ", EngineerName=" + EngineerName + ", email=" + email + ", password="
-				+ password + "]";
+				+ password + ", category=" + category + "]";
 	}
+	
+	
+	
 	
 	
 	

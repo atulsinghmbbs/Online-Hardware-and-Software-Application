@@ -12,22 +12,22 @@ public class RegisterEmployeeUseCase {
 	public static void main(String[] args) {
 		Scanner sc= new Scanner(System.in);
 		
-		System.out.println("Enter Employee First Name :");
-		String name= sc.next();
+		System.out.println("Enter Employee Id :");
+		int empid= sc.nextInt();
 
-		System.out.println("Enter  Last Name:");
-		String address= sc.next();
+		System.out.println("Enter Employee Name:");
+		String Empname= sc.next();
 
-		System.out.println("Enter Student email/username :");
+		System.out.println("Enter Employee email/username :");
 		String email= sc.next();
 		
 		System.out.println("Enter Password :");
 		String password= sc.next();
 
 		
-	Employee employee= new Employee();
-		employee.setFirsName(name);
-		employee.setLastName(address);
+	    Employee employee= new Employee();
+		employee.setEmpid(empid);
+		employee.setEmpname(Empname);
 		employee.setEmail(email);
 		employee.setPassword(password);
 		
