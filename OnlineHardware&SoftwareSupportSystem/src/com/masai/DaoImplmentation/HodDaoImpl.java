@@ -19,7 +19,7 @@ import com.masai.Utility.DBUtil;
 public class HodDaoImpl implements HodDao{
 
 	@Override
-	public String loginHOd(String email, int password) {
+	public boolean loginHOd(String email, int password) {
 		
 		String message = "Invalid Username or password..";
 		
@@ -39,17 +39,21 @@ public class HodDaoImpl implements HodDao{
 			if(rs.next())
 			{
 				 message="Login Successfully";
+				  return true;
 			
 			}
 			
 		} catch (SQLException e) {
 			
 			System.out.println(e.getMessage());
-			e.printStackTrace();
+			//e.printStackTrace();
+			
 		}
 		
 		
-		return message;
+		//return message;
+		return false;
+		
 		
 	}
 
@@ -60,12 +64,13 @@ public class HodDaoImpl implements HodDao{
 			
 			try(Connection conn= DBUtil.provideConnection()) {
 				
-				PreparedStatement ps= conn.prepareStatement("insert into engineer(engid,engineername,email,password) values(?,?,?,?)");
+				PreparedStatement ps= conn.prepareStatement("insert into engineer(engid,engineername,email,password,category) values(?,?,?,?,?)");
 				
 				ps.setInt(1, engineer.getEngid());
 				ps.setString(2, engineer.getEngineerName());
 				ps.setString(3, engineer.getEmail());
 				ps.setString(4, engineer.getPassword());
+				ps.setString(5, engineer.getCategory());
 				
 				
 				int x= ps.executeUpdate();

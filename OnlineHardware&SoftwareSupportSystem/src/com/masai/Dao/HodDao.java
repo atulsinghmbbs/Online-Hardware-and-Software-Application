@@ -8,12 +8,10 @@ import com.masai.Exception.HODException;
 import com.masai.Model.Complain;
 import com.masai.Model.Engineer;
 
-
-
 public interface HodDao {
 
 	
-	public String loginHOd(String email, int password) throws HODException;
+	public boolean loginHOd(String email, int password) throws HODException;
 
 	public String registerengineer(Engineer engineer)throws EngineerException;
 	
