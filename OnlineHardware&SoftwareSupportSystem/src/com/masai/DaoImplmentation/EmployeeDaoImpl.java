@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.masai.Dao.EmployeeDao;
 import com.masai.Exception.ComplainException;
@@ -54,7 +56,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	@Override
 	public String Loginemployee(String email, String password) throws EmployeeException {
 		
-        String message="Invalid username or password";
+        String message="NO";
          
 		
 		try (Connection conn= DBUtil.provideConnection()){
@@ -74,7 +76,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 				String p= rs.getString("password");
 				
 			 
-				 message=rs.getString("FirstName");
+				 message=rs.getString("employeename");
 			}
 			else
 				throw new EmployeeException("Invalid Username or password..");
@@ -153,6 +155,70 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return employee; 
 		
 		
+	}
+
+
+
+	@Override
+	public List<Complain> CheckComplainHistory() throws EmployeeException {
+		
+         List<Complain> list = new ArrayList<>();
+		
+		try(Connection conn = DBUtil.provideConnection()) {
+			
+			PreparedStatement ps = conn.prepareStatement("select * from complain");
+			//ps.setString(1, Engname);
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				
+			  int c = rs.getInt("complainid");
+			  String cname = rs.getString("complainname");
+			  String Ceng = rs.getString("complainengineer");
+			  String Cstatus =rs.getString("complainstatus");
+			  
+			  Complain c1 = new Complain(c ,cname ,Ceng , Cstatus);
+			  list.add(c1);
+			  
+			}			
+			
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		return list;
+		
+	}
+
+
+
+	@Override
+	public String EmployeeChangePassword(Employee employee) throws EmployeeException {
+		
+		   String isUpdated = "your password Updated successfully";
+			
+			try(Connection conn = DBUtil.provideConnection()) {
+				
+				PreparedStatement ps = conn.prepareStatement("update Employee set password = ? where empid = ?");
+				
+				
+				ps.setString(1 , employee.getPassword());
+				ps.setInt(2, employee.getEmpid());
+				
+				int out = ps.executeUpdate();
+				
+				if(out > 0) {
+					
+					isUpdated = "your password Updated successfully";
+				}
+				
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			
+			return isUpdated;
+
 	}
 
 }

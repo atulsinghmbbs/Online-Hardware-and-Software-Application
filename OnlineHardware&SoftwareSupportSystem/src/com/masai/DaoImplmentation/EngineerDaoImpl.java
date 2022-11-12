@@ -4,10 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.masai.Dao.EngineerDao;
 import com.masai.Exception.EngineerException;
 import com.masai.Model.Complain;
+import com.masai.Model.Engineer;
 import com.masai.Utility.DBUtil;
 
 public class EngineerDaoImpl implements EngineerDao {
@@ -16,7 +19,7 @@ public class EngineerDaoImpl implements EngineerDao {
 	public String loginEngineer(String email, String Password) throws EngineerException {
 	       
 		
-		 String message="Invalid username or password";
+		 String message="NO";
          
 			
 			try (Connection conn= DBUtil.provideConnection()){
@@ -71,6 +74,67 @@ public class EngineerDaoImpl implements EngineerDao {
 			if(out > 0) {
 				
 				isUpdated = "complain Engineer has Updated the Complain Status";
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return isUpdated;
+		
+	}
+
+	@Override
+	public List<Complain> problemAttendedbyWhomEngineer(String Engname) throws EngineerException {
+		
+		List<Complain> list = new ArrayList<>();
+		
+		try(Connection conn = DBUtil.provideConnection()) {
+			
+			PreparedStatement ps = conn.prepareStatement("select * from complain where complainengineer = ?");
+			ps.setString(1, Engname);
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				
+			  int c = rs.getInt("complainid");
+			  String cname = rs.getString("complainname");
+			  String Ceng = rs.getString("complainengineer");
+			  String Cstatus =rs.getString("complainstatus");
+			  
+			  Complain c1 = new Complain(c ,cname ,Ceng , Cstatus);
+			  list.add(c1);
+			  
+			}			
+			
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		return list;
+		
+	
+	}
+
+	@Override
+	public String EngineerChangePassword(Engineer engineer) throws EngineerException {
+		
+         String isUpdated = "your password Updated successfully";
+		
+		try(Connection conn = DBUtil.provideConnection()) {
+			
+			PreparedStatement ps = conn.prepareStatement("update Engineer set password = ? where engid = ?");
+			
+			
+			ps.setString(1 , engineer.getPassword());
+			ps.setInt(2, engineer.getEngid());
+			
+			int out = ps.executeUpdate();
+			
+			if(out > 0) {
+				
+				isUpdated = "your password Updated successfully";
 			}
 			
 		} catch (SQLException e) {
