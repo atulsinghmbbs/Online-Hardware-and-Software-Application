@@ -1,4 +1,4 @@
-package MainMethod;
+package com.masai.MainMethod;
 
 import java.util.Scanner;
 
