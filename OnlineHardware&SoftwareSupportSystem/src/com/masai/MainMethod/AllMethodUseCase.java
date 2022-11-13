@@ -24,6 +24,7 @@ import com.masai.HodUseCases.DeleteEngineerUseCase;
 import com.masai.HodUseCases.GetListRegisteredEngineers;
 import com.masai.HodUseCases.HodRegisterEngineerUseCase;
 import com.masai.HodUseCases.SeeAllTheProblemUseCase;
+import com.masai.Model.Employee;
 
 public class AllMethodUseCase {
 	
@@ -145,7 +146,38 @@ public class AllMethodUseCase {
 						
 					}
 					
+			  	 case 2:
+			  		 
+			  		System.out.println("Enter Employee Id :");
+					int empid= sc.nextInt();
 
+					System.out.println("Enter Employee Name:");
+					String Empname= sc.next();
+
+					System.out.println("Enter Employee email/username :");
+					String email4= sc.next();
+					
+					System.out.println("Enter Password :");
+					String passwordd= sc.next();
+
+					
+				    Employee employee= new Employee();
+					employee.setEmpid(empid);
+					employee.setEmpname(Empname);
+					employee.setEmail(email4);
+					employee.setPassword(passwordd);
+					
+					EmployeeDao dao4 = new EmployeeDaoImpl();
+					
+					try {
+					String result= dao4.registeremployee(employee);
+					
+					System.out.println(result);
+					
+					
+					}catch (EmployeeException e) {
+						System.out.println(e.getMessage());
+					}
 			  	}
 		      
 	     }
