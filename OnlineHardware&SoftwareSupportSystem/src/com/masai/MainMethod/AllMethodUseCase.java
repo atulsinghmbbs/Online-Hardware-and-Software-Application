@@ -12,6 +12,7 @@ import com.masai.EmployeeUseCases.ChangeEmployeePasswordUseCase;
 import com.masai.EmployeeUseCases.CheckComplainStatusUseCase;
 import com.masai.EmployeeUseCases.CheckComplaintHistoryUseCase;
 import com.masai.EmployeeUseCases.RegisterComplain;
+import com.masai.EngineerUseCases.EngineerViewProblemUseCase;
 import com.masai.EngineerUseCases.ProblemAttendedbyEngineerUseCase;
 import com.masai.EngineerUseCases.UpdateEngineerPasswordUseCase;
 import com.masai.EngineerUseCases.UpdateproblemStatus;
@@ -210,7 +211,7 @@ public class AllMethodUseCase {
 			
 		
 
-		System.out.println("Enter 1 :•");
+		System.out.println("Enter 1 :•Engineer can view the problem assigned to him by HOD .");
 
 		System.out.println("Enter 2 : Update The Status" );
 		
@@ -226,7 +227,8 @@ public class AllMethodUseCase {
 		switch(s1) {
 		  
 		case 1:
-			
+			EngineerViewProblemUseCase.main(null);
+			startEngineerWork();
 			break;
 			
 		case 2:

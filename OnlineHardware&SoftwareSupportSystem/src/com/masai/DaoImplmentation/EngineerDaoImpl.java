@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JList;
+
 import com.masai.Dao.EngineerDao;
 import com.masai.Exception.EngineerException;
 import com.masai.Model.Complain;
@@ -142,6 +144,39 @@ public class EngineerDaoImpl implements EngineerDao {
 		}
 		
 		return isUpdated;
+		
+	}
+
+	@Override
+	public List<Complain> EngineerviewProblem(Complain complain) throws EngineerException {
+				
+		   
+		   List<Complain> list = new ArrayList<>();
+           try(Connection conn = DBUtil.provideConnection()) {
+			
+			PreparedStatement ps = conn.prepareStatement("select * from complain where complainengineer = ?");
+			ps.setString(1, complain.getComplainengineer());
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				
+			  int c = rs.getInt("complainid");
+			  String cname = rs.getString("complainname");
+			  String Ceng = rs.getString("complainengineer");
+			  String Cstatus =rs.getString("complainstatus");
+			  
+			  Complain c1 = new Complain(c ,cname ,Ceng , Cstatus);
+			  list.add(c1);
+			  
+			}			
+			
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		return list;
+		
 		
 	}
 	

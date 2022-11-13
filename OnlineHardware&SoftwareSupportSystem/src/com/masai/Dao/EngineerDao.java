@@ -11,6 +11,8 @@ public interface EngineerDao {
 
 	public String loginEngineer(String email , String Password) throws EngineerException; 
 	
+	public List<Complain> EngineerviewProblem(Complain complain) throws EngineerException;
+	
 	public String UpdateproblemStatus(Complain complain) throws EngineerException; 
 	
 	public List<Complain> problemAttendedbyWhomEngineer(String Engname) throws EngineerException;
