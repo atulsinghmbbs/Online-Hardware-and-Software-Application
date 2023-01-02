@@ -56,14 +56,14 @@
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png" width="100%">
 
-## Video Explainer of flow control
+## Project Logo
 
 <!-- <a href="https://drive.google.com/file/d/1redTBHp9SlBXjTRZ464B-JDW7JYNphBT/view">**Video Drive Link** </a> -->
+<img src="image/LOGO PROJECT.pdf"> 
 
+## Database Schema 
 
-## Presentation  of Application 
-
-
+<img src="image/ProjectDatabase.pdf"> 
 <!-- <a href="https://docs.google.com/presentation/d/1RYZl2LMi145-N6QlpuCRUKROo7vEhpJO/edit?usp=sharing&ouid=115573521711169005136&rtpof=true&sd=true">**PPT Link** </a> -->
 
 
