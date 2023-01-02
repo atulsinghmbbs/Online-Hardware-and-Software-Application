@@ -1,5 +1,6 @@
 package com.masai.MainMethod;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.masai.Dao.EmployeeDao;
@@ -34,9 +35,15 @@ public class AllMethodUseCase {
 	}
 
 	
-	
 	public static void startRun() {
 		Scanner sc = new Scanner(System.in);
+		System.out.println("Welcome To The Online Harware and Software Support System");
+		System.out.println("**************************************************************");
+		
+		
+		
+		
+		
 		System.out.println("Enter 1 For HOD:");
 		System.out.println("Enter 2 For Engineer");
 		System.out.println("Enter 3 for Employee");
@@ -46,36 +53,45 @@ public class AllMethodUseCase {
 		  
 		
 		  case 1:
-			  
-			    System.out.println("Enter Email");
-				String email = sc.next();
-				
-				System.out.println("Enter password");
-				int password = sc.nextInt();
-				
+			   
 				
 				HodDao dao = new HodDaoImpl();
-				
-				
+				String email;
+				int password;
+				try {
+					System.out.println("Enter Email");
+					email = sc.next();
+					
+					System.out.println("Enter password");
+					 password = sc.nextInt();
 				try {
 					boolean sc1=dao.loginHOd(email, password);
 					System.out.println(sc1);
 					if(sc1==true) {
-						System.out.println("login successfully");
+						System.out.println("LOGIN SUCCESSFULLY");
 						startHODwork();
 					}else {
-						System.out.println("Login failed");
+						System.out.println("Login Failed");
 						startRun();
 					}
-				} catch (HODException e) {
-					
-					e.printStackTrace();
+				
+				
+				}
+				catch (HODException e) {
+					System.out.println(e.getMessage());
+					startRun();
+				}
+				
+				}  catch (InputMismatchException e) {
+				    System.out.println("oops invalid input");
+				    startRun();
 				}
 				
 				break;
 				
 				
 		  case 2:
+			  
 			  
 			  
 				
@@ -107,13 +123,14 @@ public class AllMethodUseCase {
 					System.out.println(e.getMessage());
 				}
 				
-				
+				break;
 				
 		  case 3: 
+			     
 			  	System.out.println("Enter 1 for login Existing User");
 		  
 			  	System.out.println("Enter 2 Registering Employee");
-			  	
+			  	System.out.println("**********************************************");
 			  	
 			  	int x = sc.nextInt();
 			  	
@@ -146,6 +163,7 @@ public class AllMethodUseCase {
 						
 					}
 					
+					break;
 			  	 case 2:
 			  		 
 			  		System.out.println("Enter Employee Id :");
@@ -178,18 +196,20 @@ public class AllMethodUseCase {
 					}catch (EmployeeException e) {
 						System.out.println(e.getMessage());
 					}
+					
+					break;
 			  	}
-		      
+		  
 	     }
 		}
 		public static void startHODwork() {
-		
+		System.out.println("**********************************************");
 		System.out.println("Enter 1 : Register a New Engineer");
-
+		
 		System.out.println("Enter 2 : List of all the Registered Engineers." );
 		
-		System.out.println("Enter 3 :  Delete any Engineers from the system");
-		
+		System.out.println("Enter 3 : Delete any Engineers from the system");
+	
 		System.out.println("Enter 4   see all the raised problem." );
 		
 		System.out.println("Enter 5   Assigning problem to Engineer");
@@ -241,16 +261,16 @@ public class AllMethodUseCase {
 		
 	     public static void startEngineerWork() {
 			
-		
+	    System.out.println("**********************************************");
 
-		System.out.println("Enter 1 :•Engineer can view the problem assigned to him by HOD .");
-
-		System.out.println("Enter 2 : Update The Status" );
+		System.out.println("Enter 1 : Engineer can view the problem assigned to him by HOD .");
+         
+		System.out.println("Enter 2 : Update The Complain Status" );
 		
 		System.out.println("Enter 3 : Problem List");
 		
-		System.out.println("Enter 4 Engineer Change Password" );
-		
+		System.out.println("Enter 4   Engineer Change Password" );
+		System.out.println("**********************************************");
 		
          Scanner sc = new Scanner(System.in);
 		
@@ -290,15 +310,15 @@ public class AllMethodUseCase {
     }
 	     
 	     public static void startemployeework() {
-				
+	    	 System.out.println("**********************************************");
 	    	 
 	    	 System.out.println("Enter 1 :Register Complain");
-
-	 		System.out.println("Enter 2 : Complain Status" );
+	    	 
+	    	 System.out.println("Enter 2 :Complain Status" );
 	 		
-	 		System.out.println("Enter 3 : Complain History");
-	 		
-	 		System.out.println("Enter 4   Employee Change Password" );
+	    	 System.out.println("Enter 3 :Complain History");
+	 	
+	    	 System.out.println("Enter 4 :Employee Change Password" );
 	 		
 	 		
 	         Scanner sc = new Scanner(System.in);
