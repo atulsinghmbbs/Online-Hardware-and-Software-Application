@@ -71,7 +71,7 @@
 
 ---
 
-<img src="image/FlowChart SB101.jpg"/ style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage"> 
+<img src="image/FlowChartSB101.jpg"/ style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage"> 
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png" width="100%">
 
