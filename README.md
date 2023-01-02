@@ -25,34 +25,32 @@
 ## Tech Stack
 
 - Java
-- Spring Framework
-- Spring Boot
-- Spring Data JPA
-- Hibernate
 - MySQL
-- PostMan
-- Swagger
-- Lombok
+- JDBC
 
 ## Modules
 
 - Login, Logout Module
-- Customer Module
-- Admin Module
-- Driver Module
-- Trip Booking Module
-- Cab Module
+- HOD Module
+- Engineer Module
+- Employee Module
+
 
 ## Features
 
 - Customer and Admin authentication & validation with session uuid having.
-- Admin Features:
+- HOD Features:
   - Administrator Role of the entire application
-  - Only registered admins with valid session token can add/update/delete view tripbooking list acording to Cab, Customer, Driver from main database.
-- Customer Features:
-  - A customer can register himself or herself on the platform.
-  - He/She can check the trip availity and book trip.
-  - If Trip is available, can book the trip by providing payment details.
+  - Hod can give the access email/password given to the Engineer.
+  - Only registered admins with valid session token can add/update/delete view complain list which regitered employee from main database.
+-  Engineer Features:
+  - A Engineer can view the complain List which was assign to the Hod.
+  - A Engineer can update the complain status
+  - A engineer can check which complain assigned to him.  
+-  Employee Features:
+  - A Employee can register himself or herself on the platform.
+  - Employee can Registered the complaint.
+   
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png" width="100%">
 
@@ -73,7 +71,7 @@
 
 ---
 
-<img src="https://github.com/atulsinghmbbs/-regular-teeth-9707/blob/main/image/FlowChart%20SB101.pdf" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage"> 
+<img src="/image/FlowChart SB101.pdf" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage"> 
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png" width="100%">
 
