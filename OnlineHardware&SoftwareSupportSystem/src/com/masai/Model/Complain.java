@@ -76,8 +76,10 @@ public class Complain {
 
 	@Override
 	public String toString() {
-		return "Complain [complainid=" + complainid + ", complainname=" + complainname + ", complainengineer="
-				+ complainengineer + ", complainstatus=" + complainstatus + "]";
+		return "Complain complainid=" + complainid + ", "
+				+ "complainname=" + complainname 
+				+ ", complainengineer="+ complainengineer + ","
+				+ " complainstatus=" + complainstatus ;
 	}
 	
 	
