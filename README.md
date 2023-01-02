@@ -43,11 +43,11 @@
   - Administrator Role of the entire application
   - Hod can give the access email/password given to the Engineer.
   - Only registered admins with valid session token can add/update/delete view complain list which regitered employee from main database.
--  Engineer Features:
+- Engineer Features:
   - A Engineer can view the complain List which was assign to the Hod.
   - A Engineer can update the complain status
   - A engineer can check which complain assigned to him.  
--  Employee Features:
+- Employee Features:
   - A Employee can register himself or herself on the platform.
   - Employee can Registered the complaint.
    
@@ -71,7 +71,7 @@
 
 ---
 
-<img src="/image/FlowChart SB101.pdf" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage"> 
+<img src="image/FlowChart SB101.pdf"/ style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage"> 
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png" width="100%">
 
