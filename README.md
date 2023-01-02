@@ -73,7 +73,7 @@
 
 ---
 
-<img src="image/FlowChart SB101.pdf" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage"> 
+<img src="https://github.com/atulsinghmbbs/-regular-teeth-9707/blob/main/image/FlowChart%20SB101.pdf" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage"> 
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png" width="100%">
 
