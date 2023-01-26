@@ -59,11 +59,11 @@
 ## Project Logo
 
 <!-- <a href="https://drive.google.com/file/d/1redTBHp9SlBXjTRZ464B-JDW7JYNphBT/view">**Video Drive Link** </a> -->
-<img src="image/LOGO PROJECT.pdf"> 
+<img src="image/LOGO PROJECT.jpg"> 
 
 ## Database Schema 
 
-<img src="image/ProjectDatabase.pdf"> 
+<img src="image/project_database.jpg"> 
 <!-- <a href="https://docs.google.com/presentation/d/1RYZl2LMi145-N6QlpuCRUKROo7vEhpJO/edit?usp=sharing&ouid=115573521711169005136&rtpof=true&sd=true">**PPT Link** </a> -->
 
 
