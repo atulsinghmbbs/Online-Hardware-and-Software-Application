@@ -17,6 +17,8 @@
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png" width="100%">
 
+## About
+
  This is the backend of an online Hardware and Software Application. The user flow is implemented for 3 entities,  HOD Engineer and Employee. Employee can login registered the complain .HOD can registered the Engineer and assign to problem  to the engineer and Engineer can the solved the complain and Update the complain Status
 
 ## Tech Stack
